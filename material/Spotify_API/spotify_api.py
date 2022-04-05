@@ -2,7 +2,7 @@ from helpers import spotify_web_api, system_history
 from fastapi import Depends, FastAPI
 from fastapi.security import OAuth2PasswordBearer
 
-FILE_PATH = "./system_history/system_history.json"
+FILE_PATH = "./assets/system_history.json"
 
 app = FastAPI()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
@@ -27,9 +27,11 @@ async def artist_api(spotify_artists_id: str = "", token: str = Depends(oauth2_s
 
     return spotify_web_api.artist(id=spotify_artists_id)
 
-@app.get("api/system/history")
+@app.get("/api/system/history")
 async def system_history_api(token: str = Depends(oauth2_scheme)):
     if token == "":
         return {"message": "Error! No user token provided."}
 
-    # TODO
+    system_history.log_system_history_action(file_path=FILE_PATH, token=token, action="/api/system/history")
+
+    return system_history.retrieve_user_system_history(file_path=FILE_PATH, token=token)

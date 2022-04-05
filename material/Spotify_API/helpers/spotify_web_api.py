@@ -1,7 +1,6 @@
 import requests
-import pprint
 
-TOKEN = "BQDAvNu8NmtrE_sYkao1y_8E_LaOLuwdyGn8dSNnrNiT-BrdVAtz2bqz3RFFIxT-27OzRhU3pF9hNb4rJolN1xjyxBNFi6pGcfdQUfIXsKAEh30InNpOotloZozwLMsB-oZ-vcB6M8U8"
+TOKEN = "BQBi3LGxRatqA_tY5JWE1mGkic4It9nno0d4CEe4O6mmwkqkxI6XTEDDe43guFiOmQyZMKumoTZRaqopO6eEEfX3tBGbI5MnDzxw4fsXj6MuS9vUkang9TqfY4TpELsm10VtuaDW11wv"
 
 def search(query):
     r = requests.get(url="https://api.spotify.com/v1/search",

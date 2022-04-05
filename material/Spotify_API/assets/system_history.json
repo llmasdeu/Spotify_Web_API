@@ -1,0 +1,82 @@
+{
+    "activity": [
+        {
+            "userToken": "sjdfdsg",
+            "actions": [
+                {
+                    "timestamp": "2022/04/04 19:19:20",
+                    "uri": "/api/search?q=rosalia"
+                },
+                {
+                    "timestamp": "2022/04/04 19:20:14",
+                    "uri": "/api/search?q=rosalia"
+                },
+                {
+                    "timestamp": "2022/04/04 19:20:24",
+                    "uri": "/api/search?q=london"
+                },
+                {
+                    "timestamp": "2022/04/04 19:20:34",
+                    "uri": "/api/artist/rosalia"
+                },
+                {
+                    "timestamp": "2022/04/04 19:21:20",
+                    "uri": "/api/artist/rosalia"
+                },
+                {
+                    "timestamp": "2022/04/04 19:21:36",
+                    "uri": "/api/artist/rosalia"
+                },
+                {
+                    "timestamp": "2022/04/04 19:22:05",
+                    "uri": "/api/artist/7ltDVBr6mKbRvohxheJ9h1"
+                },
+                {
+                    "timestamp": "2022/04/05 18:34:01",
+                    "uri": "/api/artist/7ltDVBr6mKbRvohxheJ9h1"
+                },
+                {
+                    "timestamp": "2022/04/05 18:34:28",
+                    "uri": "/api/artist/7ltDVBr6mKbRvohxheJ9h1"
+                },
+                {
+                    "timestamp": "2022/04/05 18:39:47",
+                    "uri": "/api/system/history"
+                }
+            ]
+        },
+        {
+            "userToken": "fdsfdgggdgfgfdg",
+            "actions": [
+                {
+                    "timestamp": "2022/04/05 18:40:10",
+                    "uri": "/api/system/history"
+                },
+                {
+                    "timestamp": "2022/04/05 19:38:06",
+                    "uri": "/api/system/history"
+                },
+                {
+                    "timestamp": "2022/04/05 19:38:15",
+                    "uri": "/api/search?q=rosalia"
+                },
+                {
+                    "timestamp": "2022/04/05 19:38:22",
+                    "uri": "/api/search?q=london"
+                },
+                {
+                    "timestamp": "2022/04/05 19:39:04",
+                    "uri": "/api/search?q=london"
+                },
+                {
+                    "timestamp": "2022/04/05 19:39:05",
+                    "uri": "/api/search?q=london"
+                },
+                {
+                    "timestamp": "2022/04/05 19:39:14",
+                    "uri": "/api/search?q=london"
+                }
+            ]
+        }
+    ]
+}

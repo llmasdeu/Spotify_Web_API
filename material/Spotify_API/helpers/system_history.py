@@ -18,22 +18,19 @@ def read_system_history_json(file_path):
 def update_system_history_json(file_path, data):
     try:
         with open(file_path, "w") as jsonFile:
-            json.dump(data, jsonFile)
+            json.dump(data, jsonFile, indent=4, sort_keys=False)
     except:
         print("Error! Something happened updating the system history file.")
 
 def log_system_history_action(file_path, token, action):
     try:
         data = read_system_history_json(file_path=file_path)
-        print(data)
 
         if data:
             id = search_user_in_system_history(token=token, data=data)
-            print('id: ' + str(id))
 
             if id == USER_ID_ERROR:
                 user_entry = {"userToken": token, "actions": []}
-                print(user_entry)
                 user_entry["actions"].append(generate_entry(action=action))
                 data["activity"].append(user_entry)
             else:
@@ -42,6 +39,20 @@ def log_system_history_action(file_path, token, action):
             update_system_history_json(file_path=file_path, data=data)
     except:
         print("Error! Something happened logging the system history action.")
+
+def retrieve_user_system_history(file_path, token):
+    try:
+        data = read_system_history_json(file_path=file_path)
+
+        if data:
+            id = search_user_in_system_history(token=token, data=data)
+
+            if id != USER_ID_ERROR:
+                return data["activity"][id]
+    except:
+        print("Error! Something happened retrieving the system history for a user.")
+
+    return {"message": "There\'s been an error retrieving the system history for the specified user."}
 
 def search_user_in_system_history(token, data):
     try:
@@ -54,6 +65,4 @@ def search_user_in_system_history(token, data):
     return USER_ID_ERROR
 
 def generate_entry(action):
-    print(action)
-    print({"timestamp": datetime.datetime.today(), "uri": action})
     return {"timestamp": datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S"), "uri": action}
